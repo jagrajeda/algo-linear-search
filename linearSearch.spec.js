@@ -12,6 +12,10 @@ describe("tests linearSearch", () => {
   test("linearSearch(4, [1, 2, 3]) === undefined", () => {
     expect(linearSearch(4, [1, 2, 3])).toBe(undefined);
   });
+  // edge case
+  test("returns undefined for empty array", () => {
+    expect(linearSearch(1, [])).toBe(undefined);
+  });
 });
 
 describe("tests globalLinearSearch", () => {
@@ -26,4 +30,16 @@ describe("tests globalLinearSearch", () => {
   test("globalLinearSearch('n', 'bananas'.split('')) === [2, 4]", () => {
     expect(globalLinearSearch("n", "bananas".split(""))).toEqual([2, 4]);
   });
+  // edge case
+  test("return empty array when character is not found", () => {
+    expect(globalLinearSearch("z", ["a", "b", "c"])).toEqual([]);
+  });
+
+  test("return empty array for an empty input array", () => {
+    expect(globalLinearSearch("a", [])).toEqual([]);
+  });
+
+
 });
+
+
